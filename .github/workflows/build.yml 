@@ -1,0 +1,37 @@
+name: Build Desktop App
+
+on:
+  workflow_dispatch: # 允许我们在网页上手动点击打包
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build Tauri app
+        run: pnpm tauri build
+
+      - name: Upload Installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: GTA-Vehicle-Vault-Windows
+          path: src-tauri/target/release/bundle/
