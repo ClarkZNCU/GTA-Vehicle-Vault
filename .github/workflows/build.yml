@@ -35,4 +35,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: GTA-Vehicle-Vault-Windows
-          path: src-tauri/target/release/bundle/
+          path: |
+            src-tauri/target/release/*.exe
+            src-tauri/target/release/bundle/
