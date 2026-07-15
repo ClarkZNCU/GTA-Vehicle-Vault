@@ -1,6 +1,7 @@
 name: Build Desktop App
 
 on:
+  push:
   workflow_dispatch: # 允许我们在网页上手动点击打包
 
 jobs:
