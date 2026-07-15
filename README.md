@@ -1,4 +1,4 @@
-# GTA载具保险库 (GTA Vehicle Vault)
+# GTA载具保险库 (GTA Vehicle Vault - Clark_CSZ forked)
 
 一个基于 Tauri + React + TypeScript 的 GTA 载具管理桌面应用程序，帮助玩家轻松管理和组织他们的车库与载具。
 
